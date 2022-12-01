@@ -1,617 +1,251 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  
-  <title>Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Hexo</title><meta name="author" content="John Doe"><meta name="copyright" content="John Doe"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:url" content="http://demo.appleyyy.fun/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://demo.appleyyy.fun/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Hexo',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2022-12-01 18:42:30'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
   
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
   
-  
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
     
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
-
-  
-  
-<link rel="stylesheet" href="/css/style.css">
-
-  
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
-
-  
-<meta name="generator" content="Hexo 6.3.0"></head>
-
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
         
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/12/01/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2022-12-01T09:53:23.634Z" itemprop="datePublished">2022-12-01</time>
-</a>
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
     
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/12/01/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/12/01/hello-world/" data-id="clb4x9syv000380lx8v8w8jv0" data-title="Hello World" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-test" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/12/01/test/" class="article-date">
-  <time class="dt-published" datetime="2022-12-01T03:27:51.000Z" itemprop="datePublished">2022-12-01</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/12/01/test/">test</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="芜湖"><a href="#芜湖" class="headerlink" title="芜湖"></a>芜湖</h1><p>Hello,World !!!</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/12/01/test/" data-id="clb4x9syw000480lx3suz9fkg" data-title="test" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/First-step/" rel="tag">First step</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-位运算-补码-反码" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/10/05/%E4%BD%8D%E8%BF%90%E7%AE%97-%E8%A1%A5%E7%A0%81-%E5%8F%8D%E7%A0%81/" class="article-date">
-  <time class="dt-published" datetime="2022-10-05T08:05:22.000Z" itemprop="datePublished">2022-10-05</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/10/05/%E4%BD%8D%E8%BF%90%E7%AE%97-%E8%A1%A5%E7%A0%81-%E5%8F%8D%E7%A0%81/">位运算 补码 反码</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="位运算-补码-反码"><a href="#位运算-补码-反码" class="headerlink" title="位运算 补码 反码"></a>位运算 补码 反码</h1><p>很多初学者经常搞不懂<strong>补码反码原码</strong>这些东西，今天我就在这里好好理一下。</p>
-<h2 id="基本运算"><a href="#基本运算" class="headerlink" title="基本运算"></a>基本运算</h2><p>先来讲讲基本的与或等运算，会的可以直接跳过</p>
-<table>
-<thead>
-<tr>
-<th align="center"></th>
-<th align="center">与 AND</th>
-<th align="center">或 OR</th>
-<th align="center">异或 XOR</th>
-<th align="center">非 NOT</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">1,1</td>
-<td align="center">1</td>
-<td align="center">1</td>
-<td align="center">0</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">1,0</td>
-<td align="center">0</td>
-<td align="center">1</td>
-<td align="center">1</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">0,0</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">1</td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center">0</td>
-</tr>
-<tr>
-<td align="center">0</td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center">1</td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="center">有0则为0</td>
-<td align="center">有1则为1</td>
-<td align="center">异常的或，在都为1的时候为0</td>
-<td align="center">取反</td>
-</tr>
-</tbody></table>
-<p>容易看出，<strong>与，或，异或</strong>是二元运算（即有两个操作数，如加减乘除也是二元运算），且满足交换律。而非是一元运算。当然也可以有多位一起参加运算，如10 ^ 11 &#x3D; 01，各位运算是独立的  </p>
-<p>另外，与，或，异或也满足结合律：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(a &amp; b) &amp; c == a &amp; (b &amp; c)</span><br><span class="line">(a | b) | c == a | (a | c)</span><br><span class="line">(a ^ b) ^ c == a ^ (b ^ c) </span><br></pre></td></tr></table></figure>
-
-<p>其中&amp; ，|，^ 在C语言中分别表示与，或，异或运算，现在来证明一下：</p>
-<p>与：只要位上有1，结果必是1<br>或：只要位上有0，结果必是0<br>异或：位上1的个数为奇数，结果就是1,反之为0</p>
-<hr>
-<h2 id="原码，反码"><a href="#原码，反码" class="headerlink" title="原码，反码"></a>原码，反码</h2><p>现在来讲讲正题。首先我们要知道<strong>补码和反码是两种储存数据的方式</strong></p>
-<p>大家都知道计算机里存储的是二进制数，如果我们用八个位表示一个整数，<br>如<strong>2 &#x3D; (00000010)<strong>，其中00000010就叫做2的</strong>原码</strong>。</p>
-<p>这样我们就可以用八位表示0～255的任意整数了。但是我们如何表示负数呢。我们就想出了反码这种东西。要理解这个还得了解一下计算机如何执行加法。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">2+1 = (00000010) + (00000001) = (00000011) = 3</span><br><span class="line">2+2 = (00000010) + (00000010) = (00000100) = 4</span><br><span class="line">2+3 = (00000010) + (00000011) = (00000101) = 5</span><br></pre></td></tr></table></figure>
-
-<p>可以看出就是两个加数各位异或，再加个与运算判断是否进位。（可以用这个原理在MC用红石搭个简单的加法器）。</p>
-<p><strong>所以我们如果要表示负数</strong>（最关键的问题），可以用 a + (-a) &#x3D; 0来定义表示方法。我们不妨定义(11111111)为-0（也就是0）这样我们我们就可以把一个数各位取反来表示她的相反数。如(~表示取反)</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">2 = (0000 0010)</span><br><span class="line">~2 = (1111 1101) = -2 //这些操作在实际机子上不成立，因为我们现在是以补码方式存储数据</span><br><span class="line">2 + -2 = (1111 1111) = 0</span><br><span class="line">---</span><br><span class="line">0 = (0000 0000)</span><br><span class="line">~0 = (1111 1111) = -2</span><br><span class="line">0 + -0 = (1111 1111) = 0</span><br><span class="line">---</span><br><span class="line">127 = (0111 1111)</span><br><span class="line">~127 = (1000 0000) = -127</span><br><span class="line">127 + -127 = 0</span><br></pre></td></tr></table></figure>
-
-<p>这就是<strong>反码</strong>,指的不仅是按位取反，还指这种存储数据的方式</p>
-<p>由此可见，(1000 0000)不能再像原来那样表示128了，因为他现在表示-127，以及128以上数（最高位为1）的表示方法同样被抢走了，所以我们就不表示这些数，那现在我们用八位表示的整数范围便变成了[-127,127]</p>
-<p>我们还可以知道，最高位是0的数现在都是正数，而正数取反后得到负数，所以负数的最高位是1（不严谨的讨论，-0看作负数，0看作正数^_^）所以我们现在把最高位叫做<strong>符号位</strong></p>
-<h2 id="补码"><a href="#补码" class="headerlink" title="补码"></a>补码</h2><p>可是我们知道我们现在都是以补码方式存储数据，补码又是什么，相对于反码又有什么优势呢</p>
-<p>补码也叫做<strong>二补数</strong>，而刚刚介绍的反码叫做<strong>一补数</strong>，这也可以看出补码是比反码先进一点。</p>
-<p>仔细看看我们刚刚的反码，我们用了(0000 0000)和(1111 1111)两种方式表示0，这使0的编码不唯一了，很多情况下我们需要特殊判断，导致效率低下（特别是电路设计中）。所以我们用补码解决了这个问题。</p>
-<p>补码和反码的区别就在于负数的表示。回到最初的问题，我们需要表示负数，但现在我们不能再用(1111 1111)表示0了，要坚持一个0原则(0000 0000)，可我们的 a + (-a) &#x3D; 0还是要成立的，所以</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">2 = (0000 0010)</span><br><span class="line">2 + -2 = 0 = (0000 0000)</span><br><span class="line">-2 = (1111 1110)</span><br></pre></td></tr></table></figure>
-
-<p>我们就有了另一种数据存储方式，(1111 1110)就是-2的补码。现在我们来研究一下她的性质</p>
-<p>我们容易得到：（1溢出到最高位之外了，我们不要了）</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(1111 1111) + (0000 0001) = (0000 0000)</span><br><span class="line">(0000 0001) = 1</span><br></pre></td></tr></table></figure>
-
-<p>可得(1111 1111)表示-1</p>
-<p>还有：（再说一次～表示取反）</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">2 = (0000 0010)</span><br><span class="line">～2 = （1111 1101）</span><br><span class="line">2 + ～2 = (1111 1111) = -1</span><br><span class="line">2 + ～2 + 1 = 0</span><br><span class="line">---</span><br><span class="line">a + ~a = (1111 1111) = -1</span><br><span class="line">a + ~a + 1 = 0</span><br></pre></td></tr></table></figure>
-
-<p><strong>所以我们得到(~a+1)就是a的补码</strong>，也就是我们常说的补码等于反码加一</p>
-<p>这样子我们就解决了0的唯一性，现在我们有：（可以去和上面的反码方式对比一下）</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">0 = (0000 0000)</span><br><span class="line">-0 = ~0 + 1 = (1111 1111) + 1 = (0000 0000)</span><br><span class="line">---</span><br><span class="line">127 = (0111 1111)</span><br><span class="line">-127 = ~127 + 1 = (1000 0000) + 1 = (1000 0001)</span><br></pre></td></tr></table></figure>
-
-<p>那我们现在就可以比反码多表示一位了，可以看出(1000 0000)这一种表示方法没有被抢走，所以我们就可以用(1000 0000)表示-128。所以我们能表示的整数范围现在就是[-128,127]。</p>
-<p>这就是补码和反码两种存储数据方式。</p>
-<hr>
-<p>我们可以用程序实验一下计算机里是如何用补码存储数据的：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> a = <span class="number">0</span>;a &lt;= <span class="number">10</span>;++a)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d %d %d\n&quot;</span>,a,~a,~a+<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>程序输出为</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">0 -1 0</span><br><span class="line">1 -2 -1</span><br><span class="line">2 -3 -2</span><br><span class="line">3 -4 -3</span><br><span class="line">4 -5 -4</span><br><span class="line">5 -6 -5</span><br><span class="line">6 -7 -6</span><br><span class="line">7 -8 -7</span><br><span class="line">8 -9 -8</span><br><span class="line">9 -10 -9</span><br><span class="line">10 -11 -10</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/10/05/%E4%BD%8D%E8%BF%90%E7%AE%97-%E8%A1%A5%E7%A0%81-%E5%8F%8D%E7%A0%81/" data-id="clb4x9syx000580lxhkqe8lc5" data-title="位运算 补码 反码" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" rel="tag">计算机</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-linux-ubuntu简单软件管理命令" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/06/05/linux-ubuntu%E7%AE%80%E5%8D%95%E8%BD%AF%E4%BB%B6%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4/" class="article-date">
-  <time class="dt-published" datetime="2022-06-05T05:30:16.000Z" itemprop="datePublished">2022-06-05</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/06/05/linux-ubuntu%E7%AE%80%E5%8D%95%E8%BD%AF%E4%BB%B6%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4/">Linux-Ubuntu简单软件管理命令</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="ubuntu-简单软件管理命令"><a href="#ubuntu-简单软件管理命令" class="headerlink" title="ubuntu 简单软件管理命令"></a>ubuntu 简单软件管理命令</h1><p>查看已安装软件：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dpkg -l </span><br></pre></td></tr></table></figure>
-
-<p>关键词(“***”)查找软件：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dpkg -l|grep &quot;***&quot;</span><br></pre></td></tr></table></figure>
-
-<p>卸载软件:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt --purge remove &quot;***&quot;  </span><br><span class="line">#这里的&quot;***&quot;是要在dpkg里的名字，可以通过关键字查找得到</span><br></pre></td></tr></table></figure>
-
-<p>安装软件：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg -i &quot;***.deb&quot;</span><br></pre></td></tr></table></figure>
-
-<p>压缩文件：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">zip (-r) filename dirname</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">把<span class="built_in">dirname</span>压缩为filename.zip</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">-r递归，压缩子目录，一般都要加</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">同windows系统兼容好</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">rar a filename.rar dirname</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">把<span class="built_in">dirname</span>压缩为filename.rar</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">自动递归</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">如果提示未找到命令，执行</span></span><br><span class="line">sudo apt install rar</span><br></pre></td></tr></table></figure>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">tar -cvf filename.tar dirname</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">把<span class="built_in">dirname</span>压缩为filename.tar , 注意tar不能省</span></span><br><span class="line">tar -zcvf filename.tar.gz dirname</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">把<span class="built_in">dirname</span>压缩为filename.tar.gz , tar.gz不能省,（只是参数多了个-z）</span></span><br><span class="line">tar -jcvf filename.tar.bz2 dirname</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">压成tar.bz2,参数为-j,其他同上</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">-v --verbose为显示过程</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">-f --file 不知道能干吗，反正我试过了不能不加</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">linux中最常用 快用快用</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">gzip filename</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">把filename压缩为filename.gzip,只能鸭文件不能鸭目录（或许可以，但我不会）</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">可以用tar打包后压缩，也可以直接用tar的-z参数做到，bzip2同</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">所以不常用，可以用tar替代</span></span><br></pre></td></tr></table></figure>
-
-<p>解压文件：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unzip filename.zip</span><br></pre></td></tr></table></figure>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rar x filename.rar</span><br></pre></td></tr></table></figure>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">tar -xvf filename.tar</span><br><span class="line">tar -zxvf fliename.tar.gz</span><br><span class="line">tar -jxvf filename.tar.bz2</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">把压缩的-c换成-x</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gunzip filename.gz</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">不常用，可用tar替代</span></span><br></pre></td></tr></table></figure>
-
-<p>先写这么多了，要去上学了。还有些压缩命令如gzip2等没写道，但这可以用tar的-j参数实现，记住这些一般就够用了，还有dpkg apt的细节我还不会，毕竟</p>
-<blockquote>
-<p>来路方长</p>
-</blockquote>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/06/05/linux-ubuntu%E7%AE%80%E5%8D%95%E8%BD%AF%E4%BB%B6%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4/" data-id="clb4x9sym000080lxhrych366" data-title="Linux-Ubuntu简单软件管理命令" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Eight" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/04/03/Eight/" class="article-date">
-  <time class="dt-published" datetime="2022-04-03T10:10:13.000Z" itemprop="datePublished">2022-04-03</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/04/03/Eight/">Eight</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="八数码"><a href="#八数码" class="headerlink" title="八数码"></a>八数码</h1><p><strong>题目地址</strong>:</p>
-<p><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/181/">Acwing</a></p>
-<p><a target="_blank" rel="noopener" href="http://acm.hdu.edu.cn/showproblem.php?pid=1043">HDU</a></p>
-<blockquote>
-<p>在一个 3×3 的网格中，1∼8 这 8 个数字和一个 <code>X</code> 恰好不重不漏地分布在这 3×3 的网格中<br>在游戏过程中，可以把 <code>X</code> 与其上、下、左、右四个方向之一的数字交换（如果存在）。<br>我们的目的是通过交换，使得网格变为正确排列<br></p>
-<p>把 <code>X</code> 与上下左右方向数字交换的行动记录为 <code>u</code>、<code>d</code>、<code>l</code>、<code>r</code>。<br>现在，给你一个初始网格，请你通过最少的移动次数，得到正确排列</p>
-</blockquote>
-<p>我花了好几个晚上才完整的写了出来，毕竟还是新手，但独立写出来之后还有一点成就感(当然有参考)。下面就来小小提提我的思路吧。</p>
-<blockquote>
-<p>bfs不仅可以搜索路径，还可以搜索状态。</p>
-</blockquote>
-<p>这是我从黑书上看到的一句话，从后几个晚上便开始了我的不归路。</p>
-<p>所以我也用黑书上的思路，__bfs+cantor__解决这道题</p>
-<p>这题要寻找最短路径，所以bfs更适合</p>
-<h2 id="1-广度优先搜索-BFS"><a href="#1-广度优先搜索-BFS" class="headerlink" title="1. 广度优先搜索 (BFS)"></a>1. 广度优先搜索 (BFS)</h2><p>这个思路很好理解</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">初始状态入队</span><br><span class="line">	while(队列不为空)</span><br><span class="line">		取出队首</span><br><span class="line">		if(找到目标)</span><br><span class="line">			返回答案</span><br><span class="line">		else</span><br><span class="line">			相邻状态入队</span><br></pre></td></tr></table></figure>
-
-<p>伪代码非常清晰，现在我们把__文字展开成代码实现__得到。</p>
-<p>首先我们联系一下问题</p>
-<blockquote>
-<p>输入占一行，将 3×3 的初始网格描绘出来。</p>
-<p>例如，如果初始网格如下所示：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1 2 3 </span><br><span class="line">x 4 6 </span><br><span class="line">7 5 8 </span><br></pre></td></tr></table></figure>
-
-<p>则输入为：<code>1 2 3 x 4 6 7 5 8</code></p>
-<p>输出占一行，包含一个字符串，表示得到正确排列的完整行动记录。<br>如果答案不唯一，输出任意一种合法方案即可。<br>如果不存在解决方案，则输出 <code>unsolvable</code>。</p>
-</blockquote>
-<p>我们可以用多种方式存储状态，我这里选择的一维数组。<br>因为输出行动记录，我的思路就是用一个__结构体__存储__数组__和__上次到这次的行动__，还有__上次状态的地址__。</p>
-<p>语言描述有点难懂，现在来看看代码实现。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">state</span>&#123;</span><br><span class="line">	<span class="type">int</span> num[<span class="number">9</span>];	<span class="comment">//数组</span></span><br><span class="line">	<span class="type">char</span> ch;	<span class="comment">//上次到这次的行动</span></span><br><span class="line">	<span class="type">int</span> re;		<span class="comment">//上次状态的地址</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p>在这里说到说到上次状态的地址，这是一个__整数__而__不是一个指针__。<br>这是因为我们使用__数组__模拟bfs中的__队列__，这个__整数__是__数组下标__,<br>搜索的元素出队后，__不会删除__，而是数组头指针和尾指针的移动。所以我们可以这样记录地址</p>
-<p>更详细的可以学习下队列相关知识。</p>
-<p>实现一下，看不懂没关系，稍后会解释(看起来代码很长，其实很多重复的地方，读者可以试着优化)</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">state <span class="title">bfs</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    <span class="comment">//初始状态入队，把初始状态的上状态地址设为-1，以便区别与普通状态</span></span></span><br><span class="line"><span class="function">	begin.re </span>= <span class="number">-1</span>;</span><br><span class="line">	q[++tt] = begin;</span><br><span class="line">	<span class="keyword">while</span>(tt &gt;= hh)&#123;</span><br><span class="line">		<span class="comment">//是否找到，如果队首的九个数都和目标相同，则为找到。也可用memcmp等函数</span></span><br><span class="line">		<span class="type">int</span> cnt = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i &lt; <span class="number">9</span>;++i)</span><br><span class="line">			<span class="keyword">if</span>(q[hh].num[i] == aim[i])</span><br><span class="line">				cnt++;</span><br><span class="line">		<span class="keyword">if</span>(cnt == <span class="number">9</span>) <span class="keyword">return</span> q[hh];</span><br><span class="line">        <span class="comment">//寻找0的位置，我们在输入的时候把x换成0，这样子,方便数组存储</span></span><br><span class="line">		<span class="type">int</span> z;</span><br><span class="line">		<span class="keyword">for</span>(z = <span class="number">0</span>;z &lt; <span class="number">9</span>;++z)</span><br><span class="line">			<span class="keyword">if</span>(q[hh].num[z] == <span class="number">0</span>)</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">        <span class="comment">//判断相邻状态</span></span><br><span class="line">		<span class="keyword">if</span>((z+<span class="number">1</span>)%<span class="number">3</span>)&#123;<span class="comment">//是否能向左，依题意得2 5 8这三个位置不能向左 </span></span><br><span class="line">			state tmp;</span><br><span class="line">			tmp.ch = <span class="string">&#x27;r&#x27;</span>;</span><br><span class="line">			tmp.re = hh;</span><br><span class="line">			<span class="built_in">memcpy</span>(tmp.num,q[hh].num,<span class="built_in">sizeof</span> (q[hh].num));</span><br><span class="line">			<span class="built_in">swap</span>(tmp.num[z],tmp.num[z+<span class="number">1</span>]);</span><br><span class="line">			<span class="comment">//是否查找过状态，vis定义为  如果找过则返回false，反则true</span></span><br><span class="line">            <span class="comment">//具体代码实现就不给了，因为后面后用一个更nb的函数代替</span></span><br><span class="line">            <span class="keyword">if</span>(<span class="built_in">vis</span>(tmp.num))</span><br><span class="line">                q[++tt] = tmp;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(z % <span class="number">3</span>)&#123;<span class="comment">//同上</span></span><br><span class="line">			state tmp;</span><br><span class="line">			tmp.ch = <span class="string">&#x27;l&#x27;</span>;</span><br><span class="line">			tmp.re = hh;</span><br><span class="line">			<span class="built_in">memcpy</span>(tmp.num,q[hh].num,<span class="built_in">sizeof</span> (q[hh].num));</span><br><span class="line">			<span class="built_in">swap</span>(tmp.num[z],tmp.num[z<span class="number">-1</span>]);</span><br><span class="line">			<span class="keyword">if</span>(<span class="built_in">vis</span>(tmp.num)) q[++tt] = tmp;;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(z &gt; <span class="number">2</span>)&#123;<span class="comment">//ts</span></span><br><span class="line">			state tmp;</span><br><span class="line">			tmp.ch = <span class="string">&#x27;u&#x27;</span>;</span><br><span class="line">			tmp.re = hh;</span><br><span class="line">			<span class="built_in">memcpy</span>(tmp.num,q[hh].num,<span class="built_in">sizeof</span> (q[hh].num));</span><br><span class="line">			<span class="built_in">swap</span>(tmp.num[z],tmp.num[z<span class="number">-3</span>]);</span><br><span class="line">			<span class="keyword">if</span>(<span class="built_in">vis</span>(tmp.num)) q[++tt] = tmp;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(z &lt; <span class="number">6</span>)&#123;<span class="comment">//t</span></span><br><span class="line">			state tmp;</span><br><span class="line">			tmp.ch = <span class="string">&#x27;d&#x27;</span>;</span><br><span class="line">			tmp.re = hh;</span><br><span class="line">			<span class="built_in">memcpy</span>(tmp.num,q[hh].num,<span class="built_in">sizeof</span> (q[hh].num));</span><br><span class="line">			<span class="built_in">swap</span>(tmp.num[z],tmp.num[z+<span class="number">3</span>]);</span><br><span class="line">			<span class="keyword">if</span>(<span class="built_in">vis</span>(tmp.num)) q[++tt] = tmp;</span><br><span class="line">		&#125;</span><br><span class="line">		++hh;<span class="comment">//弹出队首，因为我们前面不是取出队首，而是直接用队首，所以在此弹出队首</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> begin;<span class="comment">//如果没有找到，返回begin</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>解释</strong>: 因为我们用一维数组存储当前格子的状态，也就是（已经把x换成0）</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1 2 3</span><br><span class="line">4 5 6</span><br><span class="line">7 8 0</span><br></pre></td></tr></table></figure>
-
-<p>存为 <code> 1 2 3 4 5 6 7 8 0</code> 	对应的a[0] &#x3D; 1,a[1] &#x3D; 2,a[3] &#x3D; 2	也就是3对应的__位置数组下标__为2   </p>
-<p>由此可知，当0的__位置数组下标__为2，5，8是，不能往左走<br>同理  0，1，2时,不能往上	0，3，6不右	6，7，8不下<br>随后用if条件判断即可。</p>
-<p>而行走我们用了swap函数，交换0(即x)的位置数组下标和目标位置的下标，完成一次行走</p>
-<p>最后把__上次到这次的行动__和__上次位置地址__存储到tmp上，如果符合条件就入队。</p>
-<h2 id="康托展开-Cantor-Expansion"><a href="#康托展开-Cantor-Expansion" class="headerlink" title="康托展开 (Cantor Expansion)"></a>康托展开 (Cantor Expansion)</h2><p>代码主体部分已经基本完成，但还有很多问题，比如判重函数 <em>vis()</em>  还没有实现，如果没有判重，程序会产生很多无效操作，复杂度大大增加，但如果使用暴力的方法判重，每次把新状态和9! &#x3D; 362880 个状态对比，可能有9!*9!次检查，必__TLE__</p>
-<p>所以我们用到了这种数学方法__”康托展开”__判重</p>
-<blockquote>
-<p>康托展开是一种特殊的哈希函数</p>
-</blockquote>
-<p>实际上，康托展开听起来很高大上，其实就是__把几个数的排列映射到值上__，每个值对应一种排列，如4个数的全排列可以用4! &#x3D; 24个值表示，见下表</p>
-<table>
-<thead>
-<tr>
-<th>状态</th>
-<th>Cantor</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>0123</td>
-<td>0</td>
-</tr>
-<tr>
-<td>0132</td>
-<td>1</td>
-</tr>
-<tr>
-<td>0213</td>
-<td>2</td>
-</tr>
-<tr>
-<td>0231</td>
-<td>3</td>
-</tr>
-<tr>
-<td>……</td>
-<td>……</td>
-</tr>
-<tr>
-<td>3210</td>
-<td>23</td>
-</tr>
-</tbody></table>
-<p>那如何完成从状态到值的转换呢，当然是有公式滴<br>$$<br>X &#x3D; a_n(n-1)! + a_{n-1}(n-2)!+…+a_2\times1! + a_1 \times 0!<br>$$<br>其中，$a_i$表示原数的第i位在当前为出现的原数中排第几个(从0开始数的)<br>__乱七八糟__，对吧</p>
-<p>其实这东西真不难，看着唬人而已，我们来展开几个数试试。</p>
-<p><strong>0	2	3	1</strong><br>第4位为0，0排第<strong>0</strong>个，0个数中<strong>没有数</strong>出现过，$a_4$ &#x3D; 0 - 0 &#x3D; 0;<br>第3位为2，2排第<strong>2</strong>个，2个数中<strong>1</strong>个0出现过，$a_3$ &#x3D; 2 - 1 &#x3D; 2<br>第2位为3，3排第<strong>3</strong>个，3个数中<strong>2</strong>个数(0,2)出现过，$a_2$ &#x3D; 3 - 2 &#x3D; 1<br>第1位为1，1排第<strong>1</strong>个，1个数中<strong>1</strong>个0出现过，$a_1$ &#x3D; 1 - 1 &#x3D; 0<br>所以<br>$X &#x3D; 0\times3! + 1\times2! + 1\times1! + 0\times0! &#x3D; 3$</p>
-<p><strong>1	0	3	2</strong> <br>第4位为1，1排第<strong>1</strong>个，1个数中<strong>没有数</strong>出现过，$a_4$ &#x3D; 1 - 0 &#x3D; 1;<br>第3位为0，0排第<strong>0</strong>个，0个数中<strong>没有数</strong>出现过，$a_3$ &#x3D; 0 - 0 &#x3D; 0<br>第2位为3，3排第<strong>3</strong>个，3个数中<strong>2</strong>个数(0,1)出现过，$a_2$ &#x3D; 3 - 2 &#x3D; 1<br>第3位为2，2排第<strong>2</strong>个，2个数中<strong>2</strong>个数(0,1)出现过，$a_1$ &#x3D; 2 - 2 &#x3D; 0<br>所以<br>$X &#x3D; 1\times3! + 0\times2! + 1\times1! + 0\times0! &#x3D; 7$</p>
-<p>作了这些练习，有没有一种编程的欲望？下面给出代码实现(我自己写的，当然还有优化空间)</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> org[<span class="number">10</span>] = &#123;<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>&#125;;<span class="comment">//原数</span></span><br><span class="line"><span class="type">int</span> factory[<span class="number">11</span>] = &#123;<span class="number">1</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">6</span>,<span class="number">24</span>,<span class="number">120</span>,<span class="number">720</span>,<span class="number">5040</span>,<span class="number">40320</span>,<span class="number">362880</span>&#125;;<span class="comment">//阶乘打表</span></span><br><span class="line"><span class="comment">//bool basket[10]之前定义在外面,debug找了好久才出错,数组很容易犯这种错</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//查看有几个数出现过</span></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">int</span> <span class="title">g</span><span class="params">(<span class="type">int</span> x,<span class="type">int</span> * basket)</span></span>&#123;<span class="comment">//因为basket为cantor()的成员变量,所以传进来</span></span><br><span class="line">	<span class="type">int</span> cnt = <span class="number">0</span>;		</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i &lt; x;++i)</span><br><span class="line">		<span class="keyword">if</span>(basket[i])</span><br><span class="line">			++cnt;</span><br><span class="line">	<span class="keyword">return</span> cnt;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">int</span> <span class="title">cantor</span><span class="params">(<span class="type">int</span> * a)</span></span>&#123;</span><br><span class="line">	<span class="type">int</span> x = <span class="number">0</span>;</span><br><span class="line">    <span class="type">bool</span> basket[<span class="number">10</span>] = &#123;<span class="number">0</span>&#125;;<span class="comment">//查看有什么数出现过,记得定义为成员变量,并初始化</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i &lt; <span class="number">9</span>;++i)&#123;</span><br><span class="line">		x += (a[i] - <span class="built_in">g</span>(a[i],basket)) * factory[<span class="number">8</span>-i];</span><br><span class="line">		basket[a[i]] = <span class="literal">true</span>;<span class="comment">//找过的置1</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> x;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>这就是康托展开，我上面的解释是以编程，即应用的角度出发去理解的。读者也可以思考一下他的数学内涵(可从排列的角度出发)</p>
-<h2 id="AC代码"><a href="#AC代码" class="headerlink" title="AC代码"></a>AC代码</h2><p>我们的基本思路就是BFS+Cantor解决这玩意，当然还有双向bfs和A*等算法，读者可以尝试，下面给出我的AC代码(优化的可以)</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;utility&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">state</span>&#123;</span><br><span class="line">	<span class="type">int</span> num[<span class="number">9</span>];</span><br><span class="line">	<span class="type">char</span> ch;</span><br><span class="line">	<span class="type">int</span> re;</span><br><span class="line">&#125;;<span class="comment">//定义状态结构体</span></span><br><span class="line"></span><br><span class="line">vector&lt;<span class="type">char</span>&gt; ans;<span class="comment">//用vector存答案</span></span><br><span class="line">state q[<span class="number">666666</span>];<span class="comment">//模拟队列</span></span><br><span class="line"><span class="type">int</span> hh,tt = <span class="number">-1</span>;<span class="comment">//头,尾指针</span></span><br><span class="line"><span class="type">int</span> beg[<span class="number">9</span>];<span class="comment">//开始数组</span></span><br><span class="line"><span class="type">int</span> aim[<span class="number">9</span>] = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">0</span>&#125;;<span class="comment">//目标数组</span></span><br><span class="line"><span class="type">int</span> org[<span class="number">9</span>] = &#123;<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>&#125;;<span class="comment">//原数组，Cantor展开用</span></span><br><span class="line"><span class="type">int</span> factory[<span class="number">11</span>] = &#123;<span class="number">1</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">6</span>,<span class="number">24</span>,<span class="number">120</span>,<span class="number">720</span>,<span class="number">5040</span>,<span class="number">40320</span>,<span class="number">362880</span>&#125;;<span class="comment">//阶乘打表</span></span><br><span class="line"><span class="type">bool</span> vis[<span class="number">362881</span>];<span class="comment">//找过的数放进来</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">int</span> <span class="title">g</span><span class="params">(<span class="type">int</span> x,<span class="type">int</span> * basket)</span></span>&#123;</span><br><span class="line">	<span class="type">int</span> cnt = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i &lt; x;++i)</span><br><span class="line">		<span class="keyword">if</span>(basket[i])</span><br><span class="line">			++cnt;</span><br><span class="line">	<span class="keyword">return</span> cnt;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">bool</span> <span class="title">cantor</span><span class="params">(<span class="type">int</span> * a)</span></span>&#123;</span><br><span class="line">	<span class="type">int</span> x = <span class="number">0</span>;</span><br><span class="line">	<span class="type">int</span> basket[<span class="number">9</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i &lt; <span class="number">9</span>;++i)&#123;</span><br><span class="line">		x += (a[i] - <span class="built_in">g</span>(a[i],basket)) * factory[<span class="number">8</span>-i];</span><br><span class="line">		basket[a[i]] = <span class="literal">true</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(vis[x])<span class="comment">//判断是否找过</span></span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span>;<span class="comment">//找过就false</span></span><br><span class="line">	vis[x] = <span class="literal">true</span>;<span class="comment">//没找过就放进来</span></span><br><span class="line">	<span class="keyword">return</span> <span class="literal">true</span>;<span class="comment">//没找过就true</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">state <span class="title">bfs</span><span class="params">()</span></span>&#123;</span><br><span class="line">	state begin;</span><br><span class="line">	<span class="built_in">memcpy</span>(begin.num,beg,<span class="keyword">sizeof</span> beg);<span class="comment">//把begin数组给初始状态</span></span><br><span class="line">	begin.re = <span class="number">-1</span>;</span><br><span class="line">	q[++tt] = begin;</span><br><span class="line">	<span class="keyword">while</span>(tt &gt;= hh)&#123;</span><br><span class="line">		<span class="type">int</span> cnt = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i &lt; <span class="number">9</span>;++i)</span><br><span class="line">			<span class="keyword">if</span>(q[hh].num[i] == aim[i])</span><br><span class="line">				cnt++;</span><br><span class="line">		<span class="keyword">if</span>(cnt == <span class="number">9</span>) <span class="keyword">return</span> q[hh];</span><br><span class="line">		<span class="type">int</span> z;</span><br><span class="line">		<span class="keyword">for</span>(z = <span class="number">0</span>;z &lt; <span class="number">9</span>;++z)</span><br><span class="line">			<span class="keyword">if</span>(q[hh].num[z] == <span class="number">0</span>)</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">if</span>((z+<span class="number">1</span>)%<span class="number">3</span>)&#123;</span><br><span class="line">			state tmp;</span><br><span class="line">			tmp.ch = <span class="string">&#x27;r&#x27;</span>;</span><br><span class="line">			tmp.re = hh;</span><br><span class="line">			<span class="built_in">memcpy</span>(tmp.num,q[hh].num,<span class="built_in">sizeof</span> (q[hh].num));</span><br><span class="line">			<span class="built_in">swap</span>(tmp.num[z],tmp.num[z+<span class="number">1</span>]);</span><br><span class="line">			<span class="keyword">if</span>(<span class="built_in">cantor</span>(tmp.num)) q[++tt] = tmp;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(z % <span class="number">3</span>)&#123;</span><br><span class="line">			state tmp;</span><br><span class="line">			tmp.ch = <span class="string">&#x27;l&#x27;</span>;</span><br><span class="line">			tmp.re = hh;</span><br><span class="line">			<span class="built_in">memcpy</span>(tmp.num,q[hh].num,<span class="built_in">sizeof</span> (q[hh].num));</span><br><span class="line">			<span class="built_in">swap</span>(tmp.num[z],tmp.num[z<span class="number">-1</span>]);</span><br><span class="line">			<span class="keyword">if</span>(<span class="built_in">cantor</span>(tmp.num)) q[++tt] = tmp;;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(z &gt; <span class="number">2</span>)&#123;</span><br><span class="line">			state tmp;</span><br><span class="line">			tmp.ch = <span class="string">&#x27;u&#x27;</span>;</span><br><span class="line">			tmp.re = hh;</span><br><span class="line">			<span class="built_in">memcpy</span>(tmp.num,q[hh].num,<span class="built_in">sizeof</span> (q[hh].num));</span><br><span class="line">			<span class="built_in">swap</span>(tmp.num[z],tmp.num[z<span class="number">-3</span>]);</span><br><span class="line">			<span class="keyword">if</span>(<span class="built_in">cantor</span>(tmp.num)) q[++tt] = tmp;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(z &lt; <span class="number">6</span>)&#123;</span><br><span class="line">			state tmp;</span><br><span class="line">			tmp.ch = <span class="string">&#x27;d&#x27;</span>;</span><br><span class="line">			tmp.re = hh;</span><br><span class="line">			<span class="built_in">memcpy</span>(tmp.num,q[hh].num,<span class="built_in">sizeof</span> (q[hh].num));</span><br><span class="line">			<span class="built_in">swap</span>(tmp.num[z],tmp.num[z+<span class="number">3</span>]);</span><br><span class="line">			<span class="keyword">if</span>(<span class="built_in">cantor</span>(tmp.num)) q[++tt] = tmp;</span><br><span class="line">		&#125;</span><br><span class="line">		++hh;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> begin;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="type">char</span> chtmp;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i &lt; <span class="number">9</span>;++i)&#123;</span><br><span class="line">		cin &gt;&gt; chtmp;</span><br><span class="line">		<span class="keyword">if</span>(chtmp == <span class="string">&#x27;x&#x27;</span>)</span><br><span class="line">			beg[i] = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">else</span> </span><br><span class="line">			beg[i] = chtmp - <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">	&#125;<span class="comment">//读入begin数组</span></span><br><span class="line"></span><br><span class="line">	<span class="built_in">cantor</span>(beg);<span class="comment">//初始状态放进vis</span></span><br><span class="line">	state answer = <span class="built_in">bfs</span>();</span><br><span class="line">	<span class="keyword">if</span>(answer.re == <span class="number">-1</span>)&#123;<span class="comment">//如果没找到目标，输出unsolvable</span></span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;unsolvable\n&quot;</span>);</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">while</span>(answer.re != <span class="number">-1</span>)&#123;</span><br><span class="line">		ans.<span class="built_in">push_back</span>(answer.ch);</span><br><span class="line">		answer = q[answer.re];<span class="comment">//一层一层向上找，把ch存入答案</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">auto</span> i = ans.<span class="built_in">end</span>()<span class="number">-1</span>;i &gt;= ans.<span class="built_in">begin</span>();--i)</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%c&quot;</span>,*i);<span class="comment">//逆序输出答案</span></span><br><span class="line">	<span class="built_in">puts</span>(<span class="string">&quot;&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>Thats all</strong></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/04/03/Eight/" data-id="clb4x9sys000180lxdqsz395l" data-title="Eight" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/First-step/" rel="tag">First step</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" rel="tag">计算机</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/First-step/" style="font-size: 10px;">First step</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" style="font-size: 10px;">计算机</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">December 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2022/12/01/hello-world/">Hello World</a>
-          </li>
-        
-          <li>
-            <a href="/2022/12/01/test/">test</a>
-          </li>
-        
-          <li>
-            <a href="/2022/10/05/%E4%BD%8D%E8%BF%90%E7%AE%97-%E8%A1%A5%E7%A0%81-%E5%8F%8D%E7%A0%81/">位运算 补码 反码</a>
-          </li>
-        
-          <li>
-            <a href="/2022/06/05/linux-ubuntu%E7%AE%80%E5%8D%95%E8%BD%AF%E4%BB%B6%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4/">Linux-Ubuntu简单软件管理命令</a>
-          </li>
-        
-          <li>
-            <a href="/2022/04/03/Eight/">Eight</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2022 John Doe<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-
-<script src="/js/jquery-3.4.1.min.js"></script>
-
-
-
-  
-<script src="/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-
-  </div>
-</body>
-</html>
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">5</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><hr/></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Hexo</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">Hexo</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left"><a href="/2022/12/01/hello-world/" title="Hello World"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hello World"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/12/01/hello-world/" title="Hello World">Hello World</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2022-12-01T09:53:23.634Z" title="Created 2022-12-01 17:53:23">2022-12-01</time></span></div><div class="content">Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
+Quick StartCreate a new post1$ hexo new &quot;My New Post&quot;
+
+More info: Writing
+Run server1$ hexo server
+
+More info: Server
+Generate static files1$ hexo generate
+
+More info: Generating
+Deploy to remote sites1$ hexo deploy
+
+More info: Deployment
+</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/12/01/test/" title="test"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="test"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/12/01/test/" title="test">test</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2022-12-01T03:27:51.000Z" title="Created 2022-12-01 11:27:51">2022-12-01</time></span></div><div class="content">芜湖Hello,World !!!
+</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2022/10/05/%E4%BD%8D%E8%BF%90%E7%AE%97-%E8%A1%A5%E7%A0%81-%E5%8F%8D%E7%A0%81/" title="位运算 补码 反码"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="位运算 补码 反码"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/10/05/%E4%BD%8D%E8%BF%90%E7%AE%97-%E8%A1%A5%E7%A0%81-%E5%8F%8D%E7%A0%81/" title="位运算 补码 反码">位运算 补码 反码</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2022-10-05T08:05:22.000Z" title="Created 2022-10-05 16:05:22">2022-10-05</time></span></div><div class="content">位运算 补码 反码很多初学者经常搞不懂补码反码原码这些东西，今天我就在这里好好理一下。
+基本运算先来讲讲基本的与或等运算，会的可以直接跳过
+
+
+
+
+与 AND
+或 OR
+异或 XOR
+非 NOT
+
+
+
+1,1
+1
+1
+0
+
+
+
+1,0
+0
+1
+1
+
+
+
+0,0
+0
+0
+0
+
+
+
+1
+
+
+
+0
+
+
+0
+
+
+
+1
+
+
+
+有0则为0
+有1则为1
+异常的或，在都为1的时候为0
+取反
+
+
+容易看出，与，或，异或是二元运算（即有两个操作数，如加减乘除也是二元运算），且满足交换律。而非是一元运算。当然也可以有多位一起参加运算，如10 ^ 11 &#x3D; 01，各位运算是独立的  
+另外，与，或，异或也满足结合律：
+123(a &amp; b) &amp; c == a &amp; (b &amp; c)(a | b) | c == a | (a | c)(a ^ b) ^ c == a ^ (b ^ c) 
+
+其中&amp; ，|，^ 在C语言中分别表示与，或，异或运算，现在来证明一下：
+与：只要位上有1，结果必是1或：只要位上有0，结果必是0异或：位上1的个数为奇数，结果就是1,反之为0
+
+原 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/06/05/linux-ubuntu%E7%AE%80%E5%8D%95%E8%BD%AF%E4%BB%B6%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4/" title="Linux-Ubuntu简单软件管理命令"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Linux-Ubuntu简单软件管理命令"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/06/05/linux-ubuntu%E7%AE%80%E5%8D%95%E8%BD%AF%E4%BB%B6%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4/" title="Linux-Ubuntu简单软件管理命令">Linux-Ubuntu简单软件管理命令</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2022-06-05T05:30:16.000Z" title="Created 2022-06-05 13:30:16">2022-06-05</time></span></div><div class="content">ubuntu 简单软件管理命令查看已安装软件：
+1dpkg -l 
+
+关键词(“***”)查找软件：
+1dpkg -l|grep &quot;***&quot;
+
+卸载软件:
+12sudo apt --purge remove &quot;***&quot;  #这里的&quot;***&quot;是要在dpkg里的名字，可以通过关键字查找得到
+
+安装软件：
+1sudo dpkg -i &quot;***.deb&quot;
+
+压缩文件：
+12345zip (-r) filename dirname#把dirname压缩为filename.zip#-r递归，压缩子目录，一般都要加#同windows系统兼容好
+12345rar a filename.rar dirname#把dirname压缩为filename.rar#自动递归#如果提示未找到命令，执行sudo apt install rar
+12345678910tar -cvf filename.tar dirname#把dirname压缩为filename.tar , 注意tar不能省tar -zcvf filename.tar. ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2022/04/03/Eight/" title="Eight"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Eight"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/04/03/Eight/" title="Eight">Eight</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2022-04-03T10:10:13.000Z" title="Created 2022-04-03 18:10:13">2022-04-03</time></span></div><div class="content">八数码题目地址:
+Acwing
+HDU
+
+在一个 3×3 的网格中，1∼8 这 8 个数字和一个 X 恰好不重不漏地分布在这 3×3 的网格中在游戏过程中，可以把 X 与其上、下、左、右四个方向之一的数字交换（如果存在）。我们的目的是通过交换，使得网格变为正确排列
+把 X 与上下左右方向数字交换的行动记录为 u、d、l、r。现在，给你一个初始网格，请你通过最少的移动次数，得到正确排列
+
+我花了好几个晚上才完整的写了出来，毕竟还是新手，但独立写出来之后还有一点成就感(当然有参考)。下面就来小小提提我的思路吧。
+
+bfs不仅可以搜索路径，还可以搜索状态。
+
+这是我从黑书上看到的一句话，从后几个晚上便开始了我的不归路。
+所以我也用黑书上的思路，__bfs+cantor__解决这道题
+这题要寻找最短路径，所以bfs更适合
+1. 广度优先搜索 (BFS)这个思路很好理解
+1234567初始状态入队	while(队列不为空)		取出队首		if(找到目标)			返回答案		else			相邻状态入队
+
+伪代码非常清晰，现在我们把__文字展开成代码实现__得到。
+首先我们联系一下问题
+
+输入占一行， ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">John Doe</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">5</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/12/01/hello-world/" title="Hello World"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hello World"/></a><div class="content"><a class="title" href="/2022/12/01/hello-world/" title="Hello World">Hello World</a><time datetime="2022-12-01T09:53:23.634Z" title="Created 2022-12-01 17:53:23">2022-12-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/12/01/test/" title="test"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="test"/></a><div class="content"><a class="title" href="/2022/12/01/test/" title="test">test</a><time datetime="2022-12-01T03:27:51.000Z" title="Created 2022-12-01 11:27:51">2022-12-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/05/%E4%BD%8D%E8%BF%90%E7%AE%97-%E8%A1%A5%E7%A0%81-%E5%8F%8D%E7%A0%81/" title="位运算 补码 反码"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="位运算 补码 反码"/></a><div class="content"><a class="title" href="/2022/10/05/%E4%BD%8D%E8%BF%90%E7%AE%97-%E8%A1%A5%E7%A0%81-%E5%8F%8D%E7%A0%81/" title="位运算 补码 反码">位运算 补码 反码</a><time datetime="2022-10-05T08:05:22.000Z" title="Created 2022-10-05 16:05:22">2022-10-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/06/05/linux-ubuntu%E7%AE%80%E5%8D%95%E8%BD%AF%E4%BB%B6%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4/" title="Linux-Ubuntu简单软件管理命令"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Linux-Ubuntu简单软件管理命令"/></a><div class="content"><a class="title" href="/2022/06/05/linux-ubuntu%E7%AE%80%E5%8D%95%E8%BD%AF%E4%BB%B6%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4/" title="Linux-Ubuntu简单软件管理命令">Linux-Ubuntu简单软件管理命令</a><time datetime="2022-06-05T05:30:16.000Z" title="Created 2022-06-05 13:30:16">2022-06-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/04/03/Eight/" title="Eight"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Eight"/></a><div class="content"><a class="title" href="/2022/04/03/Eight/" title="Eight">Eight</a><time datetime="2022-04-03T10:10:13.000Z" title="Created 2022-04-03 18:10:13">2022-04-03</time></div></div></div></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>Tags</span></div><div class="card-tag-cloud"><a href="/tags/First-step/" style="font-size: 1.1em; color: #999">First step</a> <a href="/tags/Linux/" style="font-size: 1.1em; color: #999">Linux</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" style="font-size: 1.1em; color: #999">计算机</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>Archives</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/12/"><span class="card-archive-list-date">December 2022</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/10/"><span class="card-archive-list-date">October 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/06/"><span class="card-archive-list-date">June 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/04/"><span class="card-archive-list-date">April 2022</span><span class="card-archive-list-count">1</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>Info</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">Article :</div><div class="item-count">5</div></div><div class="webinfo-item"><div class="item-name">UV :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">PV :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">Last Push :</div><div class="item-count" id="last-push-date" data-lastPushDate="2022-12-01T10:42:30.920Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By John Doe</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
