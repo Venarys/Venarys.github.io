@@ -8,7 +8,7 @@
       <link href="/2022/12/01/test/"/>
       <url>/2022/12/01/test/</url>
       
-        <content type="html"><![CDATA[<h1 id="芜湖"><a href="#芜湖" class="headerlink" title="芜湖"></a>芜湖</h1><p>Hello,World !!!</p>]]></content>
+        <content type="html"><![CDATA[<h1 id="芜湖"><a href="#芜湖" class="headerlink" title="芜湖"></a>芜湖</h1><p>Hello,World !!!</p><ul><li>列表康康</li><li>sdasjdkas</li><li>sajdkljas</li></ul><ol><li>sajdhasuhd</li><li>shajdhas</li><li>shdjhasdh</li><li>nashdjh</li></ol>]]></content>
       
       
       
@@ -55,6 +55,32 @@
             <tag> Linux </tag>
             
         </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>算法大纲</title>
+      <link href="/2022/05/29/%E7%AE%97%E6%B3%95%E5%A4%A7%E7%BA%B2/"/>
+      <url>/2022/05/29/%E7%AE%97%E6%B3%95%E5%A4%A7%E7%BA%B2/</url>
+      
+        <content type="html"><![CDATA[<h1 id="算法大纲"><a href="#算法大纲" class="headerlink" title="算法大纲"></a>算法大纲</h1><h2 id="for-oier"><a href="#for-oier" class="headerlink" title="for oier"></a><em>for oier</em></h2><p><img src="/img/useful/t_220529042148_%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.png" alt="算法与数据结构"><p></p><p>简单聊一聊算法学习。<p></p><p>整个的学习主要分成算法与数据结构两大块。我相信很多人也听过<strong>程序 &#x3D; 算法+数据结构</strong>这句话，那我们就来分别讲讲这两个东西。<p></p><h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><p>这里我就不像教科书里那样赘述算法的定义性质什么的了。就直截了当的开始讲讲各个算法的特点，以及竞赛解题的思路<p></p><h3 id="暴力"><a href="#暴力" class="headerlink" title="暴力"></a>暴力</h3><p>这或许不太能算的上一种算法，但这确实对于解题至关重要。对于一题算法题要是连暴力解法都想不出来，那这题也差不多拿不到了（裸题除外）。而其他算法（以及数据结构）也只是对代码进行重构优化<br><br><strong>其他算法决定你能拿几分，暴力决定你能不能拿分</strong><br><br>而这种算法之取决于你的思路，一些题目对智力要求不低，说他是最简单而又最难的算法不无道理。</p><h3 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h3><p>BFS，DFS，A<em>，IDDFS，IDA</em>等等等等，是一条蛮重要的路线，而且和图论密切相关，是必须掌握的。</p><h3 id="贪心"><a href="#贪心" class="headerlink" title="贪心"></a>贪心</h3><p>和暴力差不多，是人类最朴素的思想的产物。是一种重要的算法思想，很多题目或多或少都有他的身影，注意他是一种思想，而不想搜索一样是一种明确的算法。</p><h3 id="分治"><a href="#分治" class="headerlink" title="分治"></a>分治</h3><p>和贪心一样，也是一种重要的算法思想，log级别的优化经常用到</p><h3 id="DP"><a href="#DP" class="headerlink" title="DP"></a>DP</h3><p><strong>动态规划</strong>，简直太简直了（）<br><br>难题必备，具体思想我现在也没搞懂。</p><h3 id="数学"><a href="#数学" class="headerlink" title="数学"></a>数学</h3><p>慢慢学吧</p><h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><p>不会很难(吧)</p><h3 id="图论"><a href="#图论" class="headerlink" title="图论"></a>图论</h3><p>不会，以后再说。<p></p><p>既然是大纲，就简单写一写了，我也没有时间和实力展开写，<strong>以后再说</strong>吧</p><h2 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h2><p>也是很重要的一块，特别是高级数据结构，题目难度不亚于DP。<p></p><h3 id="基本数据结构"><a href="#基本数据结构" class="headerlink" title="基本数据结构"></a>基本数据结构</h3><p>大部分已经用STL实现，<strong>NOIP &#x3D; C语言+STL</strong>，STL要熟练掌握<br><br>数据结构和算法也密不可分，比如BFS就要借用队列来实现。</p><h3 id="高级数据结构"><a href="#高级数据结构" class="headerlink" title="高级数据结构"></a>高级数据结构</h3><p>树，树，树还是树。幸好的是STL的map已经实现了红黑树，这些奇怪的数也不用太纠结了，但线段树和树状数组这些东西，优化代码（题目数据很大）的时候还是需要的。<p></p><p>就先写这么多吧。<p></p><p>PS:最后提几句，oier真的挺不容易的，五大学科竞赛就信息学和高中学习相关最小。两头都得顾。别人铸剑三年，锋芒一朝。而我们要铸两把剑。特别是我这种小城市的学生，竞赛资源小，也不知道能走多远。只是不想放弃而已。等着吧，说不定就成了呢。</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>无题</title>
+      <link href="/2022/05/29/untitled/"/>
+      <url>/2022/05/29/untitled/</url>
+      
+        <content type="html"><![CDATA[<h1 id="随便写写"><a href="#随便写写" class="headerlink" title="随便写写"></a>随便写写</h1><p><em>2022 5 29 1:17</em><br><br>忙了一个晚上，什么也没干成，至少开始动笔了，就写写吧。<p></p><p>语法我也忘了差不多了，今晚我什么都不想讲了，就还是测试一下，把环境配好去学校不至于太尴尬。<br><br>测试数学$\alpha$<p></p><p>$\frac {a}{b}$<p></p><p>看看插件,感觉也没什么是必要的。这部机子的配置，一切还是轻装上阵为妙。<p>困了今天先到这里，哦不是早上先到这里，我看看能不能发博客。</p>]]></content>
+      
+      
       
     </entry>
     
