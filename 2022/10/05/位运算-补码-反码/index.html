@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>位运算 补码 反码 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="位运算 补码 反码很多初学者经常搞不懂补码反码原码这些东西，今天我就在这里好好理一下。 基本运算先来讲讲基本的与或等运算，会的可以直接跳过     与 AND 或 OR 异或 XOR 非 NOT    1,1 1 1 0    1,0 0 1 1    0,0 0 0 0    1    0   0    1    有0则为0 有1则为1 异常的或，在都为1的时候为0 取反   容易看出，与，或，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="位运算 补码 反码">
+<meta property="og:url" content="http://example.com/2022/10/05/%E4%BD%8D%E8%BF%90%E7%AE%97-%E8%A1%A5%E7%A0%81-%E5%8F%8D%E7%A0%81/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="位运算 补码 反码很多初学者经常搞不懂补码反码原码这些东西，今天我就在这里好好理一下。 基本运算先来讲讲基本的与或等运算，会的可以直接跳过     与 AND 或 OR 异或 XOR 非 NOT    1,1 1 1 0    1,0 0 1 1    0,0 0 0 0    1    0   0    1    有0则为0 有1则为1 异常的或，在都为1的时候为0 取反   容易看出，与，或，">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-10-05T08:05:22.000Z">
+<meta property="article:modified_time" content="2022-12-01T07:26:10.804Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="计算机">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-位运算-补码-反码" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/10/05/%E4%BD%8D%E8%BF%90%E7%AE%97-%E8%A1%A5%E7%A0%81-%E5%8F%8D%E7%A0%81/" class="article-date">
+  <time class="dt-published" datetime="2022-10-05T08:05:22.000Z" itemprop="datePublished">2022-10-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      位运算 补码 反码
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="位运算-补码-反码"><a href="#位运算-补码-反码" class="headerlink" title="位运算 补码 反码"></a>位运算 补码 反码</h1><p>很多初学者经常搞不懂<strong>补码反码原码</strong>这些东西，今天我就在这里好好理一下。</p>
+<h2 id="基本运算"><a href="#基本运算" class="headerlink" title="基本运算"></a>基本运算</h2><p>先来讲讲基本的与或等运算，会的可以直接跳过</p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">与 AND</th>
+<th align="center">或 OR</th>
+<th align="center">异或 XOR</th>
+<th align="center">非 NOT</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1,1</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">1,0</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">0,0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">0</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">有0则为0</td>
+<td align="center">有1则为1</td>
+<td align="center">异常的或，在都为1的时候为0</td>
+<td align="center">取反</td>
+</tr>
+</tbody></table>
+<p>容易看出，<strong>与，或，异或</strong>是二元运算（即有两个操作数，如加减乘除也是二元运算），且满足交换律。而非是一元运算。当然也可以有多位一起参加运算，如10 ^ 11 &#x3D; 01，各位运算是独立的  </p>
+<p>另外，与，或，异或也满足结合律：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(a &amp; b) &amp; c == a &amp; (b &amp; c)</span><br><span class="line">(a | b) | c == a | (a | c)</span><br><span class="line">(a ^ b) ^ c == a ^ (b ^ c) </span><br></pre></td></tr></table></figure>
+
+<p>其中&amp; ，|，^ 在C语言中分别表示与，或，异或运算，现在来证明一下：</p>
+<p>与：只要位上有1，结果必是1<br>或：只要位上有0，结果必是0<br>异或：位上1的个数为奇数，结果就是1,反之为0</p>
+<hr>
+<h2 id="原码，反码"><a href="#原码，反码" class="headerlink" title="原码，反码"></a>原码，反码</h2><p>现在来讲讲正题。首先我们要知道<strong>补码和反码是两种储存数据的方式</strong></p>
+<p>大家都知道计算机里存储的是二进制数，如果我们用八个位表示一个整数，<br>如<strong>2 &#x3D; (00000010)<strong>，其中00000010就叫做2的</strong>原码</strong>。</p>
+<p>这样我们就可以用八位表示0～255的任意整数了。但是我们如何表示负数呢。我们就想出了反码这种东西。要理解这个还得了解一下计算机如何执行加法。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">2+1 = (00000010) + (00000001) = (00000011) = 3</span><br><span class="line">2+2 = (00000010) + (00000010) = (00000100) = 4</span><br><span class="line">2+3 = (00000010) + (00000011) = (00000101) = 5</span><br></pre></td></tr></table></figure>
+
+<p>可以看出就是两个加数各位异或，再加个与运算判断是否进位。（可以用这个原理在MC用红石搭个简单的加法器）。</p>
+<p><strong>所以我们如果要表示负数</strong>（最关键的问题），可以用 a + (-a) &#x3D; 0来定义表示方法。我们不妨定义(11111111)为-0（也就是0）这样我们我们就可以把一个数各位取反来表示她的相反数。如(~表示取反)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">2 = (0000 0010)</span><br><span class="line">~2 = (1111 1101) = -2 //这些操作在实际机子上不成立，因为我们现在是以补码方式存储数据</span><br><span class="line">2 + -2 = (1111 1111) = 0</span><br><span class="line">---</span><br><span class="line">0 = (0000 0000)</span><br><span class="line">~0 = (1111 1111) = -2</span><br><span class="line">0 + -0 = (1111 1111) = 0</span><br><span class="line">---</span><br><span class="line">127 = (0111 1111)</span><br><span class="line">~127 = (1000 0000) = -127</span><br><span class="line">127 + -127 = 0</span><br></pre></td></tr></table></figure>
+
+<p>这就是<strong>反码</strong>,指的不仅是按位取反，还指这种存储数据的方式</p>
+<p>由此可见，(1000 0000)不能再像原来那样表示128了，因为他现在表示-127，以及128以上数（最高位为1）的表示方法同样被抢走了，所以我们就不表示这些数，那现在我们用八位表示的整数范围便变成了[-127,127]</p>
+<p>我们还可以知道，最高位是0的数现在都是正数，而正数取反后得到负数，所以负数的最高位是1（不严谨的讨论，-0看作负数，0看作正数^_^）所以我们现在把最高位叫做<strong>符号位</strong></p>
+<h2 id="补码"><a href="#补码" class="headerlink" title="补码"></a>补码</h2><p>可是我们知道我们现在都是以补码方式存储数据，补码又是什么，相对于反码又有什么优势呢</p>
+<p>补码也叫做<strong>二补数</strong>，而刚刚介绍的反码叫做<strong>一补数</strong>，这也可以看出补码是比反码先进一点。</p>
+<p>仔细看看我们刚刚的反码，我们用了(0000 0000)和(1111 1111)两种方式表示0，这使0的编码不唯一了，很多情况下我们需要特殊判断，导致效率低下（特别是电路设计中）。所以我们用补码解决了这个问题。</p>
+<p>补码和反码的区别就在于负数的表示。回到最初的问题，我们需要表示负数，但现在我们不能再用(1111 1111)表示0了，要坚持一个0原则(0000 0000)，可我们的 a + (-a) &#x3D; 0还是要成立的，所以</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">2 = (0000 0010)</span><br><span class="line">2 + -2 = 0 = (0000 0000)</span><br><span class="line">-2 = (1111 1110)</span><br></pre></td></tr></table></figure>
+
+<p>我们就有了另一种数据存储方式，(1111 1110)就是-2的补码。现在我们来研究一下她的性质</p>
+<p>我们容易得到：（1溢出到最高位之外了，我们不要了）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(1111 1111) + (0000 0001) = (0000 0000)</span><br><span class="line">(0000 0001) = 1</span><br></pre></td></tr></table></figure>
+
+<p>可得(1111 1111)表示-1</p>
+<p>还有：（再说一次～表示取反）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">2 = (0000 0010)</span><br><span class="line">～2 = （1111 1101）</span><br><span class="line">2 + ～2 = (1111 1111) = -1</span><br><span class="line">2 + ～2 + 1 = 0</span><br><span class="line">---</span><br><span class="line">a + ~a = (1111 1111) = -1</span><br><span class="line">a + ~a + 1 = 0</span><br></pre></td></tr></table></figure>
+
+<p><strong>所以我们得到(~a+1)就是a的补码</strong>，也就是我们常说的补码等于反码加一</p>
+<p>这样子我们就解决了0的唯一性，现在我们有：（可以去和上面的反码方式对比一下）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">0 = (0000 0000)</span><br><span class="line">-0 = ~0 + 1 = (1111 1111) + 1 = (0000 0000)</span><br><span class="line">---</span><br><span class="line">127 = (0111 1111)</span><br><span class="line">-127 = ~127 + 1 = (1000 0000) + 1 = (1000 0001)</span><br></pre></td></tr></table></figure>
+
+<p>那我们现在就可以比反码多表示一位了，可以看出(1000 0000)这一种表示方法没有被抢走，所以我们就可以用(1000 0000)表示-128。所以我们能表示的整数范围现在就是[-128,127]。</p>
+<p>这就是补码和反码两种存储数据方式。</p>
+<hr>
+<p>我们可以用程序实验一下计算机里是如何用补码存储数据的：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> a = <span class="number">0</span>;a &lt;= <span class="number">10</span>;++a)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d %d %d\n&quot;</span>,a,~a,~a+<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>程序输出为</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">0 -1 0</span><br><span class="line">1 -2 -1</span><br><span class="line">2 -3 -2</span><br><span class="line">3 -4 -3</span><br><span class="line">4 -5 -4</span><br><span class="line">5 -6 -5</span><br><span class="line">6 -7 -6</span><br><span class="line">7 -8 -7</span><br><span class="line">8 -9 -8</span><br><span class="line">9 -10 -9</span><br><span class="line">10 -11 -10</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/10/05/%E4%BD%8D%E8%BF%90%E7%AE%97-%E8%A1%A5%E7%A0%81-%E5%8F%8D%E7%A0%81/" data-id="clb4x4sts000570lx3lgrdjiq" data-title="位运算 补码 反码" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" rel="tag">计算机</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/12/01/test/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          test
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/06/05/linux-ubuntu%E7%AE%80%E5%8D%95%E8%BD%AF%E4%BB%B6%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Linux-Ubuntu简单软件管理命令</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/First-step/" rel="tag">First step</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" rel="tag">计算机</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/First-step/" style="font-size: 10px;">First step</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" style="font-size: 10px;">计算机</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">December 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/12/01/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2022/12/01/test/">test</a>
+          </li>
+        
+          <li>
+            <a href="/2022/10/05/%E4%BD%8D%E8%BF%90%E7%AE%97-%E8%A1%A5%E7%A0%81-%E5%8F%8D%E7%A0%81/">位运算 补码 反码</a>
+          </li>
+        
+          <li>
+            <a href="/2022/06/05/linux-ubuntu%E7%AE%80%E5%8D%95%E8%BD%AF%E4%BB%B6%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4/">Linux-Ubuntu简单软件管理命令</a>
+          </li>
+        
+          <li>
+            <a href="/2022/04/03/Eight/">八数码问题（广搜+康托展开）</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
