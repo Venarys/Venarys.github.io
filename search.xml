@@ -4,7 +4,32 @@
   
     
     <entry>
-      <title>逻辑符号</title>
+      <title>数学分析01（集合）</title>
+      <link href="/2024/07/01/%E9%9B%86%E5%90%88%E4%B8%8E%E5%87%BD%E6%95%B0/"/>
+      <url>/2024/07/01/%E9%9B%86%E5%90%88%E4%B8%8E%E5%87%BD%E6%95%B0/</url>
+      
+        <content type="html"><![CDATA[<h1 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h1><p>卓里奇数学分析第一章§2内容</p><p>数学分析是建立在严谨的数理逻辑基础上的，而集合论就是描述这种严谨的重要工具。许多重要概念（包括函数）都可以通过集合来给出严谨的定义。</p><p>本文主要讲述朴素集合论，集合的公理系统会后面出一章提到。</p><h2 id="集合的概念"><a href="#集合的概念" class="headerlink" title="集合的概念"></a>集合的概念</h2><blockquote><p>“所谓集合，是我们直观感到或意识到的，由确定的，彼此不同的对象联合成的整体。”   —— Contor</p></blockquote><p>这句话不能被称作定义，因为它引用到了比集合更复杂且从未定义过的概念。我在书上貌似也没有找到关于“集合”的确切定义。或许是因为它作为一种公理性的存在，不需要我们精确定义就能被很好理解。那我们先把定义放在一旁，回顾一下高中的知识并把它拓展到本书中。</p><h2 id="集合的三个性质"><a href="#集合的三个性质" class="headerlink" title="集合的三个性质"></a>集合的三个性质</h2><ul><li>无序性</li><li>确定性</li><li>互异性</li></ul><p>我就不像之前教科书那样再举出几个例子仔细说明集合的概念了，这些东西应该大家都知道。还有“罗素悖论”，这个东西在讲到集合论公理系统中再讨论吧。</p><p>值得一提的是，在朴素集合论（就是我们现在讲的集合论）中，<strong>“类”，“族”，“集体”，“组”等字眼，也作为“集合”的同义词使用</strong>。如在覆盖概念中会用到的“集合的集合”（set of set），如果叫“集集”就有点难绷了，所以一般称之为“集族”。</p><h2 id="包含"><a href="#包含" class="headerlink" title="包含"></a>包含</h2><p>组成集合的事物叫做集合的元素。<br>命题：x是集合X的元素。符号表示为</p><script type="math/tex; mode=display">x \in X</script><p>其否命题为</p><script type="math/tex; mode=display">x \notin X</script><p>另外的，若$\forall x((x\in A)\Leftrightarrow(x\in B))$，则称$A = B$.</p><p>我用符号再把高中学的集合的包含表示一下吧</p><script type="math/tex; mode=display">\begin{align}&(A \subset B) := \forall x((x \in A) \Rightarrow (x \in B)) \\&(A = B) \Leftrightarrow (A \subset B)\wedge (B \subset A) \\&(A \subsetneq B) := (A\subset B)\wedge (A \neq B)\end{align}</script><h2 id="集合的简单运算"><a href="#集合的简单运算" class="headerlink" title="集合的简单运算"></a>集合的简单运算</h2><p>高中就学过的子交并补，这里再补一个差集。（子集在上面）<br>设集合$A$与$B$都是集合$M$的子集.</p><script type="math/tex; mode=display">\begin{align}&A \cup B := \{x\in M |(x\in A)\vee(x\in B)\} \\&A \cap B := \{x\in M |(x\in A)\wedge(x\in B)\} \\&C_MA := \{x\in M |(x\notin A)\} \\&A\setminus B := \{x\in A |(x\in A)\wedge(x\notin B)\}\end{align}</script><p>差集的意思即是$A$中减去属于$B$的元素，也是比较好理解的。注意这里不要求A包含B。</p><h3 id="德摩根律"><a href="#德摩根律" class="headerlink" title="德摩根律"></a>德摩根律</h3><p>在逻辑一章我也有提到这个：</p><script type="math/tex; mode=display">    \neg (A \wedge B) \Leftrightarrow \neg A \vee \neg B  \\    \neg (A \vee B) \Leftrightarrow \neg A \wedge \neg B</script><p>其在集合中的体现即为：</p><script type="math/tex; mode=display">C_M(A\cap B) = C_MA \cup C_MB \\C_M(A\cup B) = C_MA \cap C_MB</script><blockquote><p>数学会奖励保留对称性的人</p></blockquote><h2 id="集合的直积（笛卡尔积）"><a href="#集合的直积（笛卡尔积）" class="headerlink" title="集合的直积（笛卡尔积）"></a>集合的直积（笛卡尔积）</h2><p>我们用圆括号$(x,y)$表示一组有序对$z$。其中$x$称作$z$的第一射影，$y$称$z$的第二射影。</p><script type="math/tex; mode=display">X\times Y := \{(x,y)|(x\in X)\wedge(y\in Y)\}</script><p>可以理解为X中的元素和Y中的元素一一拿出来对应组成序对。例子：</p><script type="math/tex; mode=display">\{1,3,4\} \times \{2,4\} = \{(1,2),(1,4),(3,2),(3,4),(4,2),(4,4)\}</script><p>乘法原理可以得到，$n$元集和$m$元集作直积，得到$mn$元集。</p><p>特别的，将两个垂直的数轴作直积，可得到平面直角坐标系（笛卡尔坐标系）。</p><h2 id="尾声"><a href="#尾声" class="headerlink" title="尾声"></a>尾声</h2><p>关于朴素集合论就简单讲这么多，下面我来讲讲函数，它定义在集合和关系上可以给人一种新的视角去看待它。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 数学分析 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 数学 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>数学分析01（逻辑符号）</title>
       <link href="/2024/06/17/%E9%80%BB%E8%BE%91%E7%AC%A6%E5%8F%B7/"/>
       <url>/2024/06/17/%E9%80%BB%E8%BE%91%E7%AC%A6%E5%8F%B7/</url>
       
