@@ -1,0 +1,470 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>数学分析03（函数） | appleyyy</title><meta name="author" content="venarys"><meta name="copyright" content="venarys"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="函数函数的概念很多书里（如同济版高数以及高中教科书等）都是先讲到“映射”，然后用“对映”的概念去描述映射， 可是这里有一个问题，即引入了“对映”这一从未定义过的复杂概念。所以更合理的方式，是用集合论去定义函数。我们先按书的顺序，用映射来描述一下。 映射设有二集合$X$,$Y$，按照某种规律$f$，对于$x\in X$，$\exists !y\in Y$ 与$x$对应，就称有定义在$X$上而在$Y$">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数学分析03（函数）">
+<meta property="og:url" content="http://www.appleyyy.fun/2024/07/01/maAnalysis-2024-07-04-%E5%87%BD%E6%95%B0/index.html">
+<meta property="og:site_name" content="appleyyy">
+<meta property="og:description" content="函数函数的概念很多书里（如同济版高数以及高中教科书等）都是先讲到“映射”，然后用“对映”的概念去描述映射， 可是这里有一个问题，即引入了“对映”这一从未定义过的复杂概念。所以更合理的方式，是用集合论去定义函数。我们先按书的顺序，用映射来描述一下。 映射设有二集合$X$,$Y$，按照某种规律$f$，对于$x\in X$，$\exists !y\in Y$ 与$x$对应，就称有定义在$X$上而在$Y$">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://www.appleyyy.fun/img/nvno/cover_23.jpg">
+<meta property="article:published_time" content="2024-07-01T04:52:38.000Z">
+<meta property="article:modified_time" content="2024-07-06T05:40:18.459Z">
+<meta property="article:author" content="venarys">
+<meta property="article:tag" content="数学">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://www.appleyyy.fun/img/nvno/cover_23.jpg"><link rel="shortcut icon" href="/img/icon/star_5.svg"><link rel="canonical" href="http://www.appleyyy.fun/2024/07/01/maAnalysis-2024-07-04-%E5%87%BD%E6%95%B0/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":230},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"top-left"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '数学分析03（函数）',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-07-06 13:40:18'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-double-row-display@1.00/cardlistpost.min.css"/>
+<style>#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags:before {content:"\A";
+  white-space: pre;}#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags > .article-meta__separator{display:none}</style>
+<link rel="stylesheet" href="/css/categorybar.css"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiperstyle.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/clock.min.css" /><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-filter-gitcalendar/lib/gitcalendar.css" media="print" onload="this.media='all'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/nvno/avatar_3.jpg" onerror="onerror=null;src='/img/nvno/404.png'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">17</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">11</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 家</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目录</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 好玩的</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 听音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 看视频</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/nvno/cover_23.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">appleyyy</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 家</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目录</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 好玩的</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 听音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 看视频</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">数学分析03（函数）</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-07-01T04:52:38.000Z" title="发表于 2024-07-01 12:52:38">2024-07-01</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-07-06T05:40:18.459Z" title="更新于 2024-07-06 13:40:18">2024-07-06</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%90/">数学分析</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.9k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>6分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="数学分析03（函数）"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><p>函数的概念很多书里（如同济版高数以及高中教科书等）都是先讲到“<strong>映射</strong>”，然后用“<strong>对映</strong>”的概念去描述映射， 可是这里有一个问题，即引入了“对映”这一从未定义过的复杂概念。所以更合理的方式，是用集合论去定义函数。<br><br>我们先按书的顺序，用映射来描述一下。</p>
+<h2 id="映射"><a href="#映射" class="headerlink" title="映射"></a>映射</h2><p>设有二集合$X$,$Y$，按照某种规律$f$，对于$x\in X$，$\exists !y\in Y$ 与$x$对应，就称有定义在$X$上而在$Y$取值的<strong>映射</strong>。记为：</p>
+<script type="math/tex; mode=display">
+    f:X \rightarrow Y,or ,X\stackrel{f}{\longrightarrow} Y</script><p>（!在这表示唯一，<strong>唯一性</strong>是映射的重要特性）<br><br>其中$X$称映射的<strong>出发域</strong>，$y$称为映射的<strong>到达域</strong>。需要注意的是出发域不完全等于定义域，到达域也不完全等于值域<br></p>
+<p>根据集合$X$，$Y$的性质的不同，映射有不同的名字：函数、变换、射、算子、泛函等。<br><br>其中，函数表示数集到数集的映射，算子表示函数到函数的映射，泛函表示函数到数的映射。</p>
+<h2 id="满射，单射，双射"><a href="#满射，单射，双射" class="headerlink" title="满射，单射，双射"></a>满射，单射，双射</h2><h3 id="映射的定义域、值域"><a href="#映射的定义域、值域" class="headerlink" title="映射的定义域、值域"></a>映射的定义域、值域</h3><p>在出发域中取一集合$D$，$\forall x\in D$，都$\exists !y\in Y$ 与$x$对应，则称$D$为映射的<strong>定义域</strong>(Domain)，映射在$D$的一切元素上取得的函数值$f(x)$构成的集合$R$，称其为映射的<strong>值域</strong>(Range)，即</p>
+<script type="math/tex; mode=display">
+    f(X):=R=\{y\in Y|\exists x((x\in X)\wedge(y=f(x)))\}</script><p>特别的，当映射的定义域等于出发域且值域等于到达域时，称之为“<strong>满射</strong>”</p>
+<h3 id="像、原像与层"><a href="#像、原像与层" class="headerlink" title="像、原像与层"></a>像、原像与层</h3><p>当把函数$f:X\rightarrow Y$叫做映射时，它在<em>元素</em>$x\in D$上取的值$f(x)\in R$,通常称为元素$x$的<strong>像</strong><br><br>对于<em>集合</em>$A\subset D$，$A$中各点$x$的像所组成的集叫做A在映射$f:X\rightarrow Y$上的像</p>
+<p>对于集$B\subset Y$，则把$X$中其像属于$B$的那些元素的集：</p>
+<script type="math/tex; mode=display">
+    f^{-1}(B) := \{x\in X|f(x)\in B\}</script><p>称为$B$的<strong>原像</strong>或全原像。</p>
+<h3 id="单射"><a href="#单射" class="headerlink" title="单射"></a>单射</h3><p>如果对$X$中的任何元素$x_1,x_2$，有</p>
+<script type="math/tex; mode=display">
+    (f(x_1) = f(x_2)) \Rightarrow (x_1 = x_2)</script><p>即不同的元素有不同的像，就说$f$是<strong>单射</strong>（或嵌入、内射）</p>
+<h3 id="双射"><a href="#双射" class="headerlink" title="双射"></a>双射</h3><p>如果f既是单射，又是满射，就称f是双射（或一一映射、双方单值映射）</p>
+<h3 id="逆映射"><a href="#逆映射" class="headerlink" title="逆映射"></a>逆映射</h3><p>若映射$f$是双射，即集$X$与集$Y$间双方单值对应，那么自然有映射</p>
+<script type="math/tex; mode=display">
+f^{-1}:Y\rightarrow X</script><p>这个映射叫做原映射f的<strong>逆映射</strong></p>
+<p>虽然符号表示与原像类似，但<br><strong>只有双射有逆映射，而原像任何映射都有</strong></p>
+<h3 id="复合映射"><a href="#复合映射" class="headerlink" title="复合映射"></a>复合映射</h3><blockquote>
+<p>映射的复合运算，一方面是产生新映射的丰富源泉，另一方面又是将复杂映射分解为简单映射的一种方法</p>
+</blockquote>
+<p>若有二映射$f:X\rightarrow Y$与$g:Y\rightarrow Z$，且&amp;f&amp;定义在&amp;g&amp;的值域上，则可用公式</p>
+<script type="math/tex; mode=display">
+(g\circ f)(x):=g(f(x))</script><p>确定$X$上的新映射</p>
+<script type="math/tex; mode=display">
+g\circ f:X\rightarrow Z</script><p>所建立的映射叫做映射$f$与映射$g$（从右至左）的<strong>复合映射</strong></p>
+<p>可以发现，映射的复合可满足结合律：</p>
+<script type="math/tex; mode=display">
+(h\circ(g\circ f))(x)=h(g(f(x)))=(h\circ g)(f(x))=((h\circ g)\circ f)(x)</script><p>但一般不满足交换律：</p>
+<script type="math/tex; mode=display">
+    g\circ f \neq f\circ g</script><h3 id="恒等映射与互逆映射"><a href="#恒等映射与互逆映射" class="headerlink" title="恒等映射与互逆映射"></a>恒等映射与互逆映射</h3><p>如果映射$f:X\rightarrow X$把$X$的每个元映成自身，那么就把$f$记作$e_x$，称为集$X$的<strong>恒等映射</strong></p>
+<h4 id="引理"><a href="#引理" class="headerlink" title="引理"></a>引理</h4><script type="math/tex; mode=display">
+(g\circ f = e_x) \Rightarrow (g是满射)\wedge(f是单射)</script><p>$\blacktriangleleft$<br>若映射$f$不是单射，则$\exists x_1,x_2\in X,(f(x_1)=f(x_2))\Rightarrow x_1\neq x_2$ 即同一像的原像不唯一，那将原像映射回去时，必有$x_1$映射不到或$x_2$映射不到，与恒等映射的定义冲突，故$f$为单射.<br><br>若$f$的值域是$Y$，其又是单射，故$g:Y\rightarrow X$，为满射。<br>$\blacktriangleright$</p>
+<h4 id="定理"><a href="#定理" class="headerlink" title="定理"></a>定理</h4><script type="math/tex; mode=display">
+(f:X\rightarrow Y,g:Y\rightarrow X是互逆的双射)\Leftrightarrow (g\circ f = e_x)\wedge(f\circ g = e_x)</script><p>$\blacktriangleleft$<br>由引理可知，$f,g$都是双射，复合之后得到$e_x$又保证了互逆性。<br>$\blacktriangleright$</p>
+<h2 id="关系"><a href="#关系" class="headerlink" title="关系"></a>关系</h2><p>前面说了，映射（函数）的概念可以用集合论来描述。为此，我们要先引入“关系”这一概念：</p>
+<h3 id="关系的概念"><a href="#关系的概念" class="headerlink" title="关系的概念"></a>关系的概念</h3><p>由一些序对$(x,y)$组成的任一集，叫做一个<strong>关系</strong>$\mathcal{R}$<br><br>构成$\mathcal{R}$的所有序对的第一个元素组成的集$X$叫做关系$\mathcal{R}$的<em>定义域</em>，第二个组成的集叫做关系$$的<em>值域</em><br>类似映射，它也有出发域和到达域的定义。</p>
+<p>“关系”其实是一个集合，有点好玩吧。</p>
+<p>实际上，可以把关系理解为$X$与$Y$的笛卡尔积的子集。</p>
+<p>常常把$(x,y) \in \mathcal{R}$写成$x\mathcal{R}y$，并说$x$与$y$用关系$\mathcal{R}$联系着 </p>
+<p>如果$\mathcal{R} \subset X^2$，就说关系$\mathcal{R}$在$X$上给定。</p>
+<p>有点抽象吧，下面我来举几个例子</p>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><h4 id="对角线"><a href="#对角线" class="headerlink" title="对角线"></a>对角线</h4><p>一般的，给定在$X$上的关系$\mathcal{R}$，对角线定义为</p>
+<script type="math/tex; mode=display">
+    \Delta = \{(a,b)\in X^2|a=b\}</script><p>$a\Delta b$ 表示 $(a,b)\in \Delta$，即 $a=b$</p>
+<h4 id="平行"><a href="#平行" class="headerlink" title="平行"></a>平行</h4><p>若关系$\mathcal{R}$为平行，$X$为平面上直线构成的集，显然$\mathcal{R}$是$X^2$的子集：</p>
+<script type="math/tex; mode=display">
+    \mathcal{R} = \{((a,b)\in X^2 | a平行b )\}</script><p>且其具有以下性质：</p>
+<script type="math/tex; mode=display">
+\begin{align}
+    &a\mathcal{R}a      &（反身性）\\
+    &(a\mathcal{R} b) \Rightarrow (b\mathcal{R}a ) &（对称性）\\
+    &(a\mathcal{R} b)\wedge(b\mathcal{R} c)\Rightarrow (a\mathcal{R} c) &（传递性）
+\end{align}</script><p>这样子，关系这个概念就比较好理解了吧。另外的，若一个关系具有以上三个性质（反身，对称，传递），就称其为<strong>等价关系</strong>，可以用符号$\sim$表示。可以发现我们上面所说的对角线也是一种等价关系。</p>
+<h4 id="包含于"><a href="#包含于" class="headerlink" title="包含于"></a>包含于</h4><p>设$M$是一个集合，对于$M$的两个子集$a$与$b$,它们之间只有三种可能关系<br></p>
+<ul>
+<li>$a\subset b$</li>
+<li>$b\subset a$</li>
+<li>$a\not\subset b \wedge b \not\subset a$</li>
+</ul>
+<p>设$X=P(M)$是$M$的一切子集的全体。$\subset$可以看作定义在$X$上的一个关系。且此关系在以下性质：</p>
+<script type="math/tex; mode=display">
+\begin{align}
+    &a\mathcal{R}a      &（反身性）\\
+    &(a\mathcal{R} b) \Rightarrow (b\mathcal{R}a ) &（对称性）\\
+    &(a\mathcal{R} b)\wedge(b\mathcal{R} a)\Rightarrow (a = b) &（反对称性）
+\end{align}</script><p>这最后一个性质与平行不一样，称为反对称性，满足以上三个性质的关系被称为<strong>偏序关系</strong><br><br>偏序关系若另外满足性质：</p>
+<script type="math/tex; mode=display">
+    \forall a\forall b((a\mathcal{R}b)\vee(b\mathcal{R}a))</script><p>即任二元素都可比较，则称其为<strong>序关系</strong>，定义了序关系的集合称为<strong>线性序集</strong>。</p>
+<p>常见的序关系有$\leq,\geq$等，实际上这也是“序”名称的由来。</p>
+<h2 id="重新严谨定义函数（映射）"><a href="#重新严谨定义函数（映射）" class="headerlink" title="重新严谨定义函数（映射）"></a>重新严谨定义函数（映射）</h2><p>前面说过，函数的重要特性是什么？唯一性。所以我们可以如此定义函数，若满足：</p>
+<script type="math/tex; mode=display">
+(x\mathcal{R} y_1)\wedge(x\mathcal{R} y_2)\Rightarrow (y_1=y_2)</script><p>就称$\mathcal{R}$为<strong>函数关系</strong> </p>
+<p>是的，函数也是一个关系，$y = f(x)$的意思其实是$(x,y)\in \mathcal{R}$。如此，我们就把函数定义在集合论上了。</p>
+<h2 id="尾声"><a href="#尾声" class="headerlink" title="尾声"></a>尾声</h2><p>函数的本质是研究变化，在我们的世界中，变化是普遍和美丽的。艾米诺特在1918年的一篇文章Invariante Variationsprobleme(不变变分问题)，被认为是理论物理的基石。我们应该学会用变化发展的眼光去发现科学。</p>
+</article><div class="post-copyright"><div class="post-copyright__title"><span class="post-copyright-info"><h>数学分析03（函数）</h></span></div><div class="post-copyright__type"><span class="post-copyright-info"><a href="http://www.appleyyy.fun/2024/07/01/maAnalysis-2024-07-04-%E5%87%BD%E6%95%B0/">http://www.appleyyy.fun/2024/07/01/maAnalysis-2024-07-04-函数/</a></span></div><div class="post-copyright-m"><div class="post-copyright-m-info"><div class="post-copyright-a"><h>作者</h><div class="post-copyright-cc-info"><h>venarys</h></div></div><div class="post-copyright-c"><h>发布于</h><div class="post-copyright-cc-info"><h>2024-07-01</h></div></div><div class="post-copyright-u"><h>更新于</h><div class="post-copyright-cc-info"><h>2024-07-06</h></div></div><div class="post-copyright-c"><h>许可协议</h><div class="post-copyright-cc-info"><a class="icon" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a rel="noopener" target="_blank" title="CC BY-NC-SA 4.0" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></div></div></div></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%95%B0%E5%AD%A6/">数学</a></div><div class="post_share"><div class="social-share" data-image="/img/nvno/cover_23.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/07/01/maAnalysis-2024-07-01-%E9%9B%86%E5%90%88/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/nvno/cover_20.jpg" onerror="onerror=null;src='/img/nvno/cover_24.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">数学分析02（集合）</div></div></a></div><div class="next-post pull-right"><a href="/2024/06/17/maAnalysis-2024-06-17-%E9%80%BB%E8%BE%91%E7%AC%A6%E5%8F%B7/"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/nvno/cover_8.jpg" onerror="onerror=null;src='/img/nvno/cover_24.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">数学分析01（逻辑符号）</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/nvno/avatar_3.jpg" onerror="this.onerror=null;this.src='/img/nvno/404.png'" alt="avatar"/></div><div class="author-info__name">venarys</div><div class="author-info__description">venarys</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">17</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">11</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Venarys"><i class="fab fa-github"></i><span>Kiss</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Venarys" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:yyyzs233666@163.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://www.zhihu.com/people/yi-chou-zhu-meng-shang" target="_blank" title="Zhihu"><i class="fab fa-zhihu"></i></a><a class="social-icon" href="https://space.bilibili.com/316522580?spm_id_from=333.1007.0.0" target="_blank" title="Bilibili"><i class="fab fa-bilibili"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%87%BD%E6%95%B0"><span class="toc-number">1.</span> <span class="toc-text">函数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%98%A0%E5%B0%84"><span class="toc-number">1.1.</span> <span class="toc-text">映射</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BB%A1%E5%B0%84%EF%BC%8C%E5%8D%95%E5%B0%84%EF%BC%8C%E5%8F%8C%E5%B0%84"><span class="toc-number">1.2.</span> <span class="toc-text">满射，单射，双射</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%98%A0%E5%B0%84%E7%9A%84%E5%AE%9A%E4%B9%89%E5%9F%9F%E3%80%81%E5%80%BC%E5%9F%9F"><span class="toc-number">1.2.1.</span> <span class="toc-text">映射的定义域、值域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%83%8F%E3%80%81%E5%8E%9F%E5%83%8F%E4%B8%8E%E5%B1%82"><span class="toc-number">1.2.2.</span> <span class="toc-text">像、原像与层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E5%B0%84"><span class="toc-number">1.2.3.</span> <span class="toc-text">单射</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8C%E5%B0%84"><span class="toc-number">1.2.4.</span> <span class="toc-text">双射</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%86%E6%98%A0%E5%B0%84"><span class="toc-number">1.2.5.</span> <span class="toc-text">逆映射</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%8D%E5%90%88%E6%98%A0%E5%B0%84"><span class="toc-number">1.2.6.</span> <span class="toc-text">复合映射</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%81%92%E7%AD%89%E6%98%A0%E5%B0%84%E4%B8%8E%E4%BA%92%E9%80%86%E6%98%A0%E5%B0%84"><span class="toc-number">1.2.7.</span> <span class="toc-text">恒等映射与互逆映射</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%95%E7%90%86"><span class="toc-number">1.2.7.1.</span> <span class="toc-text">引理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9A%E7%90%86"><span class="toc-number">1.2.7.2.</span> <span class="toc-text">定理</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E7%B3%BB"><span class="toc-number">1.3.</span> <span class="toc-text">关系</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E7%B3%BB%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="toc-number">1.3.1.</span> <span class="toc-text">关系的概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B"><span class="toc-number">1.3.2.</span> <span class="toc-text">实例</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%B9%E8%A7%92%E7%BA%BF"><span class="toc-number">1.3.2.1.</span> <span class="toc-text">对角线</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B9%B3%E8%A1%8C"><span class="toc-number">1.3.2.2.</span> <span class="toc-text">平行</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8C%85%E5%90%AB%E4%BA%8E"><span class="toc-number">1.3.2.3.</span> <span class="toc-text">包含于</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%8D%E6%96%B0%E4%B8%A5%E8%B0%A8%E5%AE%9A%E4%B9%89%E5%87%BD%E6%95%B0%EF%BC%88%E6%98%A0%E5%B0%84%EF%BC%89"><span class="toc-number">1.4.</span> <span class="toc-text">重新严谨定义函数（映射）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%BE%E5%A3%B0"><span class="toc-number">1.5.</span> <span class="toc-text">尾声</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/07/04/maAnalysis-2024-07-04-%E5%85%AC%E7%90%86%E5%8C%96%E9%9B%86%E5%90%88%E8%AE%BA/" title="公理化集合论"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/nvno/cover_6.jpg" onerror="this.onerror=null;this.src='/img/nvno/cover_24.jpg'" alt="公理化集合论"/></a><div class="content"><a class="title" href="/2024/07/04/maAnalysis-2024-07-04-%E5%85%AC%E7%90%86%E5%8C%96%E9%9B%86%E5%90%88%E8%AE%BA/" title="公理化集合论">公理化集合论</a><time datetime="2024-07-04T07:50:16.000Z" title="发表于 2024-07-04 15:50:16">2024-07-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/07/01/maAnalysis-2024-07-01-%E9%9B%86%E5%90%88/" title="数学分析02（集合）"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/nvno/cover_20.jpg" onerror="this.onerror=null;this.src='/img/nvno/cover_24.jpg'" alt="数学分析02（集合）"/></a><div class="content"><a class="title" href="/2024/07/01/maAnalysis-2024-07-01-%E9%9B%86%E5%90%88/" title="数学分析02（集合）">数学分析02（集合）</a><time datetime="2024-07-01T04:52:38.000Z" title="发表于 2024-07-01 12:52:38">2024-07-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/07/01/maAnalysis-2024-07-04-%E5%87%BD%E6%95%B0/" title="数学分析03（函数）"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/nvno/cover_23.jpg" onerror="this.onerror=null;this.src='/img/nvno/cover_24.jpg'" alt="数学分析03（函数）"/></a><div class="content"><a class="title" href="/2024/07/01/maAnalysis-2024-07-04-%E5%87%BD%E6%95%B0/" title="数学分析03（函数）">数学分析03（函数）</a><time datetime="2024-07-01T04:52:38.000Z" title="发表于 2024-07-01 12:52:38">2024-07-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/06/17/maAnalysis-2024-06-17-%E9%80%BB%E8%BE%91%E7%AC%A6%E5%8F%B7/" title="数学分析01（逻辑符号）"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/nvno/cover_8.jpg" onerror="this.onerror=null;this.src='/img/nvno/cover_24.jpg'" alt="数学分析01（逻辑符号）"/></a><div class="content"><a class="title" href="/2024/06/17/maAnalysis-2024-06-17-%E9%80%BB%E8%BE%91%E7%AC%A6%E5%8F%B7/" title="数学分析01（逻辑符号）">数学分析01（逻辑符号）</a><time datetime="2024-06-17T14:55:12.000Z" title="发表于 2024-06-17 22:55:12">2024-06-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/06/17/%E5%9B%9E%E5%BD%92/" title="回归"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/nvno/cover_7.jpg" onerror="this.onerror=null;this.src='/img/nvno/cover_24.jpg'" alt="回归"/></a><div class="content"><a class="title" href="/2024/06/17/%E5%9B%9E%E5%BD%92/" title="回归">回归</a><time datetime="2024-06-17T13:53:37.000Z" title="发表于 2024-06-17 21:53:37">2024-06-17</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2024 By venarys</div><div class="footer_custom_text">白鹭飞过也沾尘，只见流水斯斯，不忆昨晨。<p><a href="https://icp.gov.moe/?keyword=20221217" target="_blank">萌ICP备20221217号</a></p></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container').forEach(node => {
+            if (node.hasAttribute('display')) {
+              btf.wrap(node, 'div', { class: 'mathjax-overflow' })
+            } else {
+              btf.wrap(node, 'span', { class: 'mathjax-overflow' })
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script></div><div class="aplayer no-destroy" data-id="7783241948" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay="false"> </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start --><script data-pjax>
+    function butterfly_categories_card_injector_config(){
+      var parent_div_git = document.getElementById('recent-posts');
+      var item_html = '<style>li.categoryBar-list-item{width:32.3%;}.categoryBar-list{max-height: 190px;overflow:auto;}.categoryBar-list::-webkit-scrollbar{width:0!important}@media screen and (max-width: 650px){.categoryBar-list{max-height: 160px;}}</style><div class="recent-post-item" style="height:auto;width:100%;padding:0px;"><div id="categoryBar"><ul class="categoryBar-list"><li class="categoryBar-list-item" style="background:url(/img/nvno/cover_23.jpg);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/随笔/&quot;);" href="javascript:void(0);">随笔</a><span class="categoryBar-list-count">4</span><span class="categoryBar-list-descr">随笔</span></li><li class="categoryBar-list-item" style="background:url(/img/nvno/cover_22.jpg);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/算法/&quot;);" href="javascript:void(0);">算法</a><span class="categoryBar-list-count">4</span><span class="categoryBar-list-descr">算法</span></li><li class="categoryBar-list-item" style="background:url(/img/nvno/cover_24.jpg);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/数学分析/&quot;);" href="javascript:void(0);">数学分析</a><span class="categoryBar-list-count">3</span><span class="categoryBar-list-descr">Linux使用技巧</span></li><li class="categoryBar-list-item" style="background:url(/img/nvno/cover_9.jpg);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/Linux使用技巧/&quot;);" href="javascript:void(0);">Linux使用技巧</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr">杂项</span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/杂项/&quot;);" href="javascript:void(0);">杂项</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li></ul></div></div>';
+      console.log('已挂载butterfly_categories_card')
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+      }
+    if( document.getElementById('recent-posts') && (location.pathname ==='/'|| '/' ==='all')){
+    butterfly_categories_card_injector_config()
+    }
+  </script><script data-pjax>
+  function butterfly_swiper_injector_config(){
+    var parent_div_git = document.getElementById('recent-posts');
+    var item_html = '<div class="recent-post-item" style="height: auto;width: 100%"><div class="blog-slider swiper-container-fade swiper-container-horizontal" id="swiper_container"><div class="blog-slider__wrp swiper-wrapper" style="transition-duration: 0ms;"><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2022/06/05/linux-ubuntu简单软件管理命令/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/nvno/cover_12.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2022-06-05</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2022/06/05/linux-ubuntu简单软件管理命令/&quot;);" href="javascript:void(0);" alt="">Linux-Ubuntu简单软件管理命令</a><div class="blog-slider__text">随便写写</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2022/06/05/linux-ubuntu简单软件管理命令/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2022/12/02/一些思考/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/nvno/cover_6.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2022-12-02</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2022/12/02/一些思考/&quot;);" href="javascript:void(0);" alt="">一些思考</a><div class="blog-slider__text">随便写写</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2022/12/02/一些思考/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2022/10/05/位运算-补码-反码/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/nvno/cover_6.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2022-10-05</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2022/10/05/位运算-补码-反码/&quot;);" href="javascript:void(0);" alt="">位运算 补码 反码</a><div class="blog-slider__text">随便写写</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2022/10/05/位运算-补码-反码/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div></div><div class="blog-slider__pagination swiper-pagination-clickable swiper-pagination-bullets"></div></div></div>';
+    console.log('已挂载butterfly_swiper')
+    parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  var elist = 'undefined'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_swiper_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_swiper_injector_config();
+  }
+  </script><script defer src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.js"></script><script defer data-pjax src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper_init.js"></script><script data-pjax>
+  function butterfly_clock_anzhiyu_injector_config(){
+    var parent_div_git = document.getElementsByClassName('sticky_layout')[0];
+    var item_html = '<div class="card-widget card-clock"><div class="card-glass"><div class="card-background"><div class="card-content"><div id="hexo_electric_clock"><img class="entered loading" id="card-clock-loading" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/loading.gif" style="height: 120px; width: 100%;" data-ll-status="loading"/></div></div></div></div></div>';
+    console.log('已挂载butterfly_clock_anzhiyu')
+    if(parent_div_git) {
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = '/';
+  var qweather_key = '12b5403dad834eef8b7d9997a9e3d260';
+  var gaud_map_key = 'b6c9ec258a894156a52f2d59f34843a7';
+  var baidu_ak_key = 'undefined';
+  var flag = 0;
+  var clock_rectangle = '119.363066,27.392066';
+  var clock_default_rectangle_enable = 'false';
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_clock_anzhiyu_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_clock_anzhiyu_injector_config();
+  }
+  </script><script src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script><script data-pjax src="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/clock.min.js"></script><script data-pjax src="https://npm.elemecdn.com/hexo-filter-gitcalendar/lib/gitcalendar.js"></script><script data-pjax>
+  function gitcalendar_injector_config(){
+      var parent_div_git = document.getElementById('gitZone');
+      var item_html = '<div class="recent-post-item" style="width:100%;height:auto;padding:10px;"><style>#git_container{min-height: 280px}@media screen and (max-width:650px) {#git_container{min-height: 0px}}</style><div id="git_loading" style="width:10%;height:100%;margin:0 auto;display: block;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50" xml:space="preserve"><path fill="#d0d0d0" d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z" transform="rotate(275.098 25 25)"><animatetransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animatetransform></path></svg><style>#git_container{display: none;}</style></div><div id="git_container"></div></div>';
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+      console.log('已挂载gitcalendar')
+      }
+
+    if( document.getElementById('gitZone') && (location.pathname ==='/about/'|| '/about/' ==='all')){
+        gitcalendar_injector_config()
+        GitCalendarInit("null/api?Venarys",['#d9e0df', '#c6e0dc', '#a8dcd4', '#9adcd2', '#89ded1', '#77e0d0', '#5fdecb', '#47dcc6', '#39dcc3', '#1fdabe', '#00dab9'],'Venarys')
+    }
+  </script><!-- hexo injector body_end end --></body></html>
